@@ -1,9 +1,10 @@
 import { init } from './services/sockets';
 import myServer from './services/server';
 import { Server } from 'socket.io';
+import Config from './config';
 
 const io = new Server(myServer);
-const puerto = process.env.PORT || 8080;
+const puerto = Config.PORT;
 
 init(io);
 
